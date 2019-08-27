@@ -10,7 +10,7 @@
 				const userAction = async () => {
 				const response = await fetch('http://directive-producer-demojam-zombie.apps.akrohg-openshift.redhatgov.io/camel/rest/produce', {
 				  method: 'POST',
-				  body: '{"username":"javathelo","direction":"up"}'
+				  body: '{"username":"javathelo","direction":"up"}',
 				  headers: {
 			      	'Content-Type': 'application/json'
 				  }
@@ -24,12 +24,12 @@
 	<body>
 		<div class="container text-center" style="font-size: 100px">
 			<input class="form-control" placeholder="Name" type="text" name="username" style="margin-top:50px;margin-bottom:50px"/>
-			<a href="#" onclick="sendDirective()"><i class="fa fa-arrow-circle-up"></i></a><br/>
-			<a href="#"><i class="fa fa-arrow-circle-left"></i></a>
+			<a onclick="sendDirective()"><i class="fa fa-arrow-circle-up"></i></a><br/>
+			<a><i class="fa fa-arrow-circle-left"></i></a>
 			<image src="shadowman.png" alt="shadowman" style="height:200px"/>
 			
-			<a href="#"><i class="fa fa-arrow-circle-right"></i></a><br/>
-			<a href="#"><i class="fa fa-arrow-circle-down"></i></a>
+			<a><i class="fa fa-arrow-circle-right"></i></a><br/>
+			<a><i class="fa fa-arrow-circle-down"></i></a>
 		</div>
 	</body>
 </html>

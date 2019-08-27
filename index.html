@@ -7,17 +7,11 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script>
 			function sendDirective() {
-				const userAction = async () => {
-				const response = await fetch('http://directive-producer-demojam-zombie.apps.akrohg-openshift.redhatgov.io/camel/rest/produce', {
-				  method: 'POST',
-				  body: '{"username":"javathelo","direction":"up"}',
-				  headers: {
-			      	'Content-Type': 'application/json'
-				  }
-				});
-				const myJson = await response.json(); //extract JSON from the http response
-				  // do something with myJson
-				}
+				var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+				var theUrl = "http://directive-producer-demojam-zombie.apps.akrohg-openshift.redhatgov.io/camel/rest/produce";
+				xmlhttp.open("POST", theUrl);
+				xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+				xmlhttp.send(JSON.stringify({ "username": "javathelo", "direction": "up" }));
 			}
 		</script>
 	</head>
